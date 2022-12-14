@@ -5,9 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 @Entity
-@Table(name = "SharePrice")
+@Table(name = "SharePriceStory")
 @Data
-public class SharePriceEntity {
+public class SharePriceStoryEntity {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -15,4 +16,5 @@ public class SharePriceEntity {
     private double price;
     @ManyToOne
     private CompanyEntity company;
+
 }

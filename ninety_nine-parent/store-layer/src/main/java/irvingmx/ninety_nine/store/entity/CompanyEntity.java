@@ -14,4 +14,5 @@ public class CompanyEntity {
     private String ISIN;
     private String simbol;
     private String market;
+
 }

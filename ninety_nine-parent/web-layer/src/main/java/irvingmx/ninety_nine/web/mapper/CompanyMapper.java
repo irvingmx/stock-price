@@ -7,8 +7,8 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface CompanyMapper {
 
-    Company map(irvingmx.ninety_nine_api.prices.Company company);
+    Company map(irvingmx.ninety_nine_api.prices.Company alienCompany);
 
     @InheritInverseConfiguration
-    irvingmx.ninety_nine_api.prices.Company map(Company entity);
+    irvingmx.ninety_nine_api.prices.Company map(Company company);
 }
