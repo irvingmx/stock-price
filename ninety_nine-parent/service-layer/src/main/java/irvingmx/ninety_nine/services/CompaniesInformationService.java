@@ -11,7 +11,8 @@ public interface CompaniesInformationService {
 
     Company getCompany(String ISIN);
 
-    public SharePrice getSharePrice(String ISIN);
+    List<SharePrice> getAllSharePrices();
+    SharePrice getSharePrice(String ISIN);
     List<SharePrice> getSharePriceStory(String ISIN);
     void refreshSharePrice(SharePrice sharePrice);
 

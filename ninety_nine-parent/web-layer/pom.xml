@@ -39,6 +39,11 @@
             <artifactId>model-layer</artifactId>
             <version>${ninety_nine-version}</version>
         </dependency>
+        <dependency>
+            <groupId>irvingmx.ninety_nine</groupId>
+            <artifactId>mock-service-layer</artifactId>
+            <version>${ninety_nine-version}</version>
+        </dependency>
     </dependencies>
 
     <build>

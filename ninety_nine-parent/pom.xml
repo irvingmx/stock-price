@@ -21,6 +21,7 @@
         <module>service-layer</module>
         <module>store-layer</module>
         <module>web-layer</module>
+        <module>mock-service-layer</module>
     </modules>
 
     <properties>

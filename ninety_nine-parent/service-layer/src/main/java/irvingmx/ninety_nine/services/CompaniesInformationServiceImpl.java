@@ -3,22 +3,19 @@ package irvingmx.ninety_nine.services;
 import irvingmx.ninety_nine.company.Company;
 import irvingmx.ninety_nine.company.SharePrice;
 import irvingmx.ninety_nine.exceptions.CompanyNotFoundException;
+import irvingmx.ninety_nine.store.entity.CompanyEntity;
 import irvingmx.ninety_nine.store.entity.SharePriceEntity;
 import irvingmx.ninety_nine.store.entity.SharePriceStoryEntity;
+import irvingmx.ninety_nine.store.mapper.CompanyMapper;
 import irvingmx.ninety_nine.store.mapper.SharePriceMapper;
 import irvingmx.ninety_nine.store.mapper.SharePriceStoryMapper;
 import irvingmx.ninety_nine.store.repository.CompanyRepository;
-import irvingmx.ninety_nine.store.entity.CompanyEntity;
-import irvingmx.ninety_nine.store.mapper.CompanyMapper;
 import irvingmx.ninety_nine.store.repository.SharePriceRepository;
 import irvingmx.ninety_nine.store.repository.SharePriceStoryRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,6 +42,12 @@ public class CompaniesInformationServiceImpl implements  CompaniesInformationSer
 
     public Company getCompany(String ISIN){
         return companyMapper.map(getCompanyEntity(ISIN));
+    }
+
+    @Override
+    public List<SharePrice> getAllSharePrices() {
+        List<SharePriceEntity> sharePriceEntities =  sharePriceRepository.findAll();
+        return sharePriceEntities.stream().map(sharePriceMapper::map).collect(Collectors.toList());
     }
 
     public SharePrice getSharePrice(String ISIN){
