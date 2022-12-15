@@ -2,11 +2,11 @@ package irvingmx.ninety_nine.company;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 @Data
 public class SharePrice {
 
-    private LocalDateTime time;
+    private Timestamp timestamp;
     private double price;
     private Company company;
 }

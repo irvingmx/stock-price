@@ -16,6 +16,8 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +66,7 @@ public class CompaniesInformationServiceImpl implements  CompaniesInformationSer
             sharePriceEntity.setCompany(companyEntity);
         }
         sharePriceEntity.setPrice(sharePrice.getPrice());
-        sharePriceEntity.setLocalDateTime(sharePrice.getTime());
+        sharePriceEntity.setTimestamp(sharePrice.getTimestamp());
         sharePriceRepository.save(sharePriceEntity);
         SharePriceStoryEntity sharePriceStoryEntity = sharePriceStoryMapper.map(sharePrice);
         sharePriceStoryRepository.save(sharePriceStoryEntity);
