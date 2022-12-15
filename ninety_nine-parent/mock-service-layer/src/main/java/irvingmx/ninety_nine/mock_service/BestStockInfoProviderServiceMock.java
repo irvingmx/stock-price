@@ -3,6 +3,7 @@ package irvingmx.ninety_nine.mock_service;
 import irvingmx.ninety_nine.mock_service.api.ProviderSharePrice;
 import irvingmx.ninety_nine.mock_service.api.StockInformationProviderServiceMock;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ public class BestStockInfoProviderServiceMock implements StockInformationProvide
     private static Random random = new Random();
     @Override
     @GetMapping("providershareprices/{isin}")
-    public ProviderSharePrice getProviderSharePrice(String isin) {
+    public ProviderSharePrice getProviderSharePrice(@PathVariable String isin) {
         ProviderSharePrice providerSharePrice = new ProviderSharePrice();
         providerSharePrice.setTimestamp(Timestamp.from(Instant.now()));
         providerSharePrice.setISIN(isin);

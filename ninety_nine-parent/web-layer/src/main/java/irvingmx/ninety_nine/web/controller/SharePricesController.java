@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,7 +47,7 @@ public class SharePricesController implements SharePriceService {
     }
     @GetMapping("/companies/{isin}/shareprices/{seriesType}")
     @Override
-    public List<SharePrice> getSharePrices(@PathVariable String isin, @PathVariable SeriesTimeType seriesTimeType) {
+    public List<SharePrice> getSharePrices(@Valid @PathVariable String isin, @PathVariable SeriesTimeType seriesTimeType) {
         return null;
     }
 }
