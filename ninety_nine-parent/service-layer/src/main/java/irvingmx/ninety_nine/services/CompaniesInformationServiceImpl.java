@@ -61,6 +61,8 @@ public class CompaniesInformationServiceImpl implements  CompaniesInformationSer
         return sharePriceStoryEntities.stream().map(sharePriceStoryMapper::map).collect(Collectors.toList());
     }
 
+
+
     public void refreshSharePrice(SharePrice sharePrice){
         CompanyEntity companyEntity = getCompanyEntity(sharePrice.getCompany().getISIN());
         SharePriceEntity sharePriceEntity = getSharePriceEntityByCompany(companyEntity);

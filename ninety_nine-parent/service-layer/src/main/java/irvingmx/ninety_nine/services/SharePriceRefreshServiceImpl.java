@@ -29,7 +29,7 @@ public class SharePriceRefreshServiceImpl implements SharePriceRefreshService{
     public void refreshSharePrice() {
         List<Company> companies = companiesInformationService.getAllCompanies();
         logger.info("SharePriceRefreshService :: refreshSharePrices process start ...");
-        companies.forEach( i -> {
+        companies.parallelStream().forEach( i -> {
             SharePrice alienSharePrice = getProviderSharePrice(i.getISIN());
             alienSharePrice.setCompany(i);
             companiesInformationService.refreshSharePrice(alienSharePrice);

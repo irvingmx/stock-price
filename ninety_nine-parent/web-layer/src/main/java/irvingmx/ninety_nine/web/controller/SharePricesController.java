@@ -1,13 +1,15 @@
 package irvingmx.ninety_nine.web.controller;
 
+import irvingmx.ninety_nine.services.SharePriceSeriesTimeProcessorServiceImpl;
 import irvingmx.ninety_nine.services.CompaniesInformationService;
 import irvingmx.ninety_nine.web.mapper.CompanyMapper;
+import irvingmx.ninety_nine.web.mapper.SeriesTimeTypeMapper;
 import irvingmx.ninety_nine.web.mapper.SharePriceMapper;
-import irvingmx.ninety_nine_api.prices.Company;
-import irvingmx.ninety_nine_api.prices.SeriesTimeType;
-import irvingmx.ninety_nine_api.prices.SharePrice;
-import irvingmx.ninety_nine_api.prices.SharePriceService;
+import irvingmx.ninety_nine.web.mapper.SharePriceTimeSerieMapper;
+import irvingmx.ninety_nine_api.prices.*;
 import org.mapstruct.factory.Mappers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,12 +23,15 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/v1")
 public class SharePricesController implements SharePriceService {
-
+    private static final Logger logger = LoggerFactory.getLogger(SharePricesController.class);
     @Autowired
     private CompaniesInformationService companiesInformationService;
+    @Autowired
+    private SharePriceSeriesTimeProcessorServiceImpl sharePriceSeriesTimeProcessorServiceMock;
     private CompanyMapper companyMapper = Mappers.getMapper(CompanyMapper.class);
     private SharePriceMapper sharePriceMapper = Mappers.getMapper(SharePriceMapper.class);
-
+    private SeriesTimeTypeMapper seriesTimeTypeMapper = Mappers.getMapper(SeriesTimeTypeMapper.class);
+    private SharePriceTimeSerieMapper sharePriceTimeSerieMapper = Mappers.getMapper(SharePriceTimeSerieMapper.class);
 
     @GetMapping("/companies")
     @Override
@@ -43,11 +48,19 @@ public class SharePricesController implements SharePriceService {
     @Override
     public SharePrice getSharePrice(@PathVariable String isin) {
         return sharePriceMapper.map(companiesInformationService.getSharePrice(isin));
-
     }
-    @GetMapping("/companies/{isin}/shareprices/{seriesType}")
+
     @Override
-    public List<SharePrice> getSharePrices(@Valid @PathVariable String isin, @PathVariable SeriesTimeType seriesTimeType) {
-        return null;
+    @GetMapping("/companies/shareprices/{isin}")
+    public List<SharePrice> getSharePriceStory(@PathVariable String isin) {
+        return companiesInformationService.getSharePriceStory(isin).stream().map(sharePriceMapper::map).collect(Collectors.toList());
+    }
+    @Override
+    @GetMapping("/companies/shareprices/{isin}/{seriesTimeType}")
+    public List<SharePriceTimeSerie> getSharePricesStoriesByTimeSeries(@Valid @PathVariable String isin, @Valid @PathVariable SeriesTimeType seriesTimeType) {
+        logger.info(isin);
+        logger.info(seriesTimeType.name());
+        irvingmx.ninety_nine.company.SeriesTimeType unalienSeriesTimeType= seriesTimeTypeMapper.map(seriesTimeType);
+        return sharePriceSeriesTimeProcessorServiceMock.getSharePriceStoryBySeriesTimeType(isin,unalienSeriesTimeType).stream().map(sharePriceTimeSerieMapper::map).collect(Collectors.toList());
     }
 }

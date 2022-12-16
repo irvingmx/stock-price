@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "1d57b639-a837-4427-b7ba-bafbd72652e4",
+		"name": "ninety_nine_services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5693378"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/v1/companies/ES0173516115/shareprices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies/ES0173516115/shareprices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies",
+						"ES0173516115",
+						"shareprices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/companies/shareprices/ES0173516115",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies/shareprices/ES0173516115",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies",
+						"shareprices",
+						"ES0173516115"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/companies/ES0173516115",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies/ES0173516115",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies",
+						"ES0173516115"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/companies/shareprices/ES0173516115/HOURLY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies/shareprices/ES0173516115/HOURLY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies",
+						"shareprices",
+						"ES0173516115",
+						"HOURLY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/v1/companies/shareprices/ES0173516115/WEEKLY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/companies/shareprices/ES0173516115/WEEKLY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"companies",
+						"shareprices",
+						"ES0173516115",
+						"WEEKLY"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

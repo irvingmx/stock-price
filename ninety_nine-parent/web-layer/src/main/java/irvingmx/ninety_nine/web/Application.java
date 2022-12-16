@@ -10,8 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages =
-        {"irvingmx.ninety_nine.*", "irvingmx.ninety_nine.mock_service.*"})
+@ComponentScan(basePackages = {"irvingmx.ninety_nine.*"})
 @EntityScan(basePackages = {"irvingmx.ninety_nine.*"})
 @EnableJpaRepositories(basePackages = {"irvingmx.ninety_nine.*"})
 @EnableScheduling

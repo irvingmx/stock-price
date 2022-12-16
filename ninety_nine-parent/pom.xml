@@ -32,6 +32,7 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <ninety_nine-version>1.0-SNAPSHOT</ninety_nine-version>
         <ninety_nine-api-version>1.0-SNAPSHOT</ninety_nine-api-version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
@@ -78,6 +79,16 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
             <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
     </dependencies>
 
