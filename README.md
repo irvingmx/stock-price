@@ -18,11 +18,11 @@ This Api is documented vía Swagger you can find the API Description on the foll
 
 ## Resources exposed
 
-GET /v1/companies - getAllCompanies
-GET /v1/companies/{isin} - getCompany
-GET /v1/companies/{isin}/shareprices - getSharePrice
-GET /v1/companies/shareprices/{isin} - getSharePriceStory
-GET /v1/companies/shareprices/{isin}/{seriesTimeType} - getSharePricesStoriesByTimeSeries
+* GET /v1/companies - getAllCompanies
+* GET /v1/companies/{isin} - getCompany
+* GET /v1/companies/{isin}/shareprices - getSharePrice
+* GET /v1/companies/shareprices/{isin} - getSharePriceStory
+* GET /v1/companies/shareprices/{isin}/{seriesTimeType} - getSharePricesStoriesByTimeSeries
 
 # To compile and run
 
