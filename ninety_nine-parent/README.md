@@ -24,6 +24,12 @@ GET /v1/companies/{isin}/shareprices - getSharePrice
 GET /v1/companies/shareprices/{isin} - getSharePriceStory
 GET /v1/companies/shareprices/{isin}/{seriesTimeType} - getSharePricesStoriesByTimeSeries
 
+# To compile and run
+
+1) In order to compile and run first you have to clone agnostic api and then mvn clean install
+2) After this you can clone implementation and mvn clean package
+3) Run Application.java
+
 # Testing
 
 ## Postman Collection
