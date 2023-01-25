@@ -19,11 +19,7 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>irvingmx.stock-price-api</groupId>-->
-<!--            <artifactId>stock-price-api-parent</artifactId>-->
-<!--            <version>${stock-price-api-version}</version>-->
-<!--        </dependency>-->
+
         <dependency>
             <groupId>irvingmx.stock-price</groupId>
             <artifactId>service-layer</artifactId>
